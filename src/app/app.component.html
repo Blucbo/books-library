@@ -1,6 +1,9 @@
-<!--<mat-toolbar color="primary">-->
-  <!--<span>My Application</span>-->
-<!--</mat-toolbar>-->
+<mat-toolbar color="primary">
+  <div class="button-row">
+    <a mat-button [routerLink]="['/writers']" class="nav-item">Writers</a>
+    <a mat-button [routerLink]="['/books']" class="nav-item">Books</a>
+  </div>
+</mat-toolbar>
 <div>
   <router-outlet></router-outlet>
 </div>

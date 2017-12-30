@@ -1,0 +1,13 @@
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-item {
+    font-size: 22px;
+}
+
+.mat-button:not([disabled]):focus {
+    background-color: rgba(0,0,0,.2);
+}
