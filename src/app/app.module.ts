@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import {BooksModule} from "./books/books.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
+    BooksModule,
     MatToolbarModule
   ],
   providers: [],
