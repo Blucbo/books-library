@@ -1,3 +1,19 @@
-<p>
-  book works!
-</p>
+<mat-list color="primary">
+  <h3 mat-subheader>Book</h3>
+  <mat-list-item role="listitem">Name: name</mat-list-item>
+  <mat-nav-list>
+    <mat-list-item>
+      <a matLine [routerLink]="['/writers/1']">
+        <span matTooltip="open author">Author: Author</span>
+      </a>
+    </mat-list-item>
+    <mat-list-item>
+      <a matLine [routerLink]="['/books/?genre=']">
+        <span matTooltip="open books with same genre">Genre: Genre</span>
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+  <mat-list-item role="listitem">Egone non intellego, quid sit don Graece, Latine voluptas? In eo enim positum est id, quod dicimus esse expetendum.
+    At cum de plurimis eadem dicit, tum certe de maximis. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.
+    Non ego tecum iam ita iocabor, ut isdem his de rebus, cum L. Hoc enim constituto in philosophia constituta sunt omnia.</mat-list-item>
+</mat-list>
