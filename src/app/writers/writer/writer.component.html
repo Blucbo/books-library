@@ -1,3 +1,13 @@
-<p>
-  writer works!
-</p>
+<mat-list color="primary" *ngIf="writer">
+  <h3 mat-subheader>Writer</h3>
+  <mat-list-item role="listitem">Name: {{ writer.full_name }}</mat-list-item>
+  <mat-list-item role="listitem">Biography: {{ writer.biography }}</mat-list-item>
+  <mat-list-item>List books:</mat-list-item>
+  <mat-nav-list class="wrapper-list">
+    <mat-list-item *ngFor="let book of writer.books">
+      <a matLine [routerLink]="['/books/', book.id]">
+        <span matTooltip="open book">{{ book.name }}</span>
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-list>

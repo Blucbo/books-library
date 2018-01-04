@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import {Writer} from "../writer.model";
+import {WritersService} from "../writers.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'blib-writer',
   templateUrl: './writer.component.html',
-  styleUrls: ['./writer.component.scss']
+  styleUrls: ['./writer.component.scss'],
+  providers: [WritersService]
 })
 export class WriterComponent implements OnInit {
-
-  constructor() { }
+  writer: Writer;
+  constructor(
+    private route: ActivatedRoute,
+    private WritersService: WritersService
+  ) { }
 
   ngOnInit() {
+    this.WritersService
+      .getWriter(
+        Number(this.route.snapshot.params['id']))
+      .subscribe(
+        result => this.writer = result,
+      );
   }
 
 }

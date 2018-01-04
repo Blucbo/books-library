@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  host: 'http://own.api',
+  allBooks: '/books',
+  allWriters: '/writers'
 };

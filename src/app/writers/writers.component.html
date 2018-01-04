@@ -1,3 +1,17 @@
-<p>
-  writers works!
-</p>
+<mat-toolbar color="warm" *ngFor="let writer of writers">
+  <span class="writers-name">{{ writer.full_name }}</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a [routerLink]="['/writers/', writer.id]" mat-menu-item matTooltip="open author biography">
+      <mat-icon>recent_actors</mat-icon>
+      <span>Biography</span>
+    </a>
+    <a *ngFor="let book of writer.books"
+      [routerLink]="['/books/', book.id]" mat-menu-item matTooltip="open book">
+      <mat-icon>import_contacts</mat-icon>
+      <span>{{ book.name }}</span>
+    </a>
+  </mat-menu>
+</mat-toolbar>
