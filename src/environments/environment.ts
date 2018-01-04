@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   host: './assets/_mocks/',
   allBooks: 'books.json',
-  allWriters: 'writers.json'
+  allWriters: 'writers.json',
+  allGenres: 'genres.json'
 };

@@ -1,19 +1,22 @@
-<mat-list color="primary">
+<mat-list color="primary" *ngIf="book">
   <h3 mat-subheader>Book</h3>
-  <mat-list-item role="listitem">Name: name</mat-list-item>
+  <mat-list-item role="listitem">Name: {{ book.name }}</mat-list-item>
   <mat-nav-list>
     <mat-list-item>
-      <a matLine [routerLink]="['/writers/1']">
-        <span matTooltip="open author">Author: Author</span>
+      <a matLine
+         [routerLink]="['/writers/', book.id_author]"
+      >
+        <span matTooltip="open author">Author: {{ book.author }}</span>
       </a>
     </mat-list-item>
     <mat-list-item>
-      <a matLine [routerLink]="['/books/?genre=']">
-        <span matTooltip="open books with same genre">Genre: Genre</span>
+      <a matLine
+         [routerLink]="['/books']"
+         [queryParams]="{genre: book.genre}"
+      >
+        <span matTooltip="open books with same genre">Genre: {{ book.genre }}</span>
       </a>
     </mat-list-item>
   </mat-nav-list>
-  <mat-list-item role="listitem">Egone non intellego, quid sit don Graece, Latine voluptas? In eo enim positum est id, quod dicimus esse expetendum.
-    At cum de plurimis eadem dicit, tum certe de maximis. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.
-    Non ego tecum iam ita iocabor, ut isdem his de rebus, cum L. Hoc enim constituto in philosophia constituta sunt omnia.</mat-list-item>
+  <mat-list-item role="listitem">{{ book.content }}</mat-list-item>
 </mat-list>
