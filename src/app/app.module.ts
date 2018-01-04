@@ -6,6 +6,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
+import { HttpModule } from '@angular/http';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +19,9 @@ import { AppRoutingModule } from "./app-routing.module";
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule

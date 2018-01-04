@@ -13,11 +13,11 @@ export class WriterComponent implements OnInit {
   writer: Writer;
   constructor(
     private route: ActivatedRoute,
-    private WritersService: WritersService
+    private writersService: WritersService
   ) { }
 
   ngOnInit() {
-    this.WritersService
+    this.writersService
       .getWriter(
         Number(this.route.snapshot.params['id']))
       .subscribe(

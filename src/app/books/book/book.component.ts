@@ -13,11 +13,11 @@ export class BookComponent implements OnInit {
   book: Book;
   constructor(
     private route: ActivatedRoute,
-    private BooksService: BooksService
+    private booksService: BooksService
   ) { }
 
   ngOnInit() {
-    this.BooksService
+    this.booksService
       .getBook(
         Number(this.route.snapshot.params['id']))
       .subscribe(

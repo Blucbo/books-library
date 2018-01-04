@@ -12,11 +12,11 @@ export class WritersComponent implements OnInit {
   writers: Writer[];
 
   constructor(
-    private WritersService: WritersService
+    private writersService: WritersService
   ) { }
 
   ngOnInit() {
-    this.WritersService.getWriters().subscribe(
+    this.writersService.getWriters().subscribe(
       result => this.writers = result,
     );
   }

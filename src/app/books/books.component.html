@@ -1,15 +1,24 @@
 <mat-list>
   <h3 mat-subheader>Books</h3>
-  <mat-list-item>
+  <mat-form-field class="wrapper-select">
+    <mat-select placeholder="Genre" (change)="selectionChange($event)" [(value)]="selectedGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-list-item *ngFor="let book of books | filter: 'genre':selectedGenre ">
     <mat-icon mat-list-icon>book</mat-icon>
-    <a mat-line [routerLink]="['/books/1']" class="list-link">tet</a>
-    <a mat-line [routerLink]="['/writers']" class="list-link">etettet</a>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item>
-    <mat-icon mat-list-icon>folder</mat-icon>
-    <h4 mat-line>tet</h4>
-    <p mat-line>etettet</p>
+    <a mat-line
+       [routerLink]="['/books/', book.id]">
+      <span class="list-link">
+        Name: {{ book.name }}
+      </span>
+    </a>
+    <a mat-line
+       [routerLink]="['/writers/', book.id_author]">
+      <span class="list-link">
+        Author: {{ book.author }}
+      </span>
+    </a>
   </mat-list-item>
   <mat-divider></mat-divider>
 </mat-list>
